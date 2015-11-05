@@ -1,3 +1,4 @@
+
 var logToDom = function (message) {
     var e = document.createElement('label');
     e.innerText = message;
@@ -8,7 +9,7 @@ var logToDom = function (message) {
     document.body.appendChild(br);
     document.body.appendChild(br2);
 };
-
+logToDom('Init Beacon 1 Scan.');
 var delegate = new cordova.plugins.locationManager.Delegate().implement({
 
     didDetermineStateForRegion: function (pluginResult) {
@@ -30,7 +31,7 @@ var delegate = new cordova.plugins.locationManager.Delegate().implement({
     }
 
 });
-
+logToDom('Beacon 1 Delegated');
 var uuid = 'B9407F30-F5F8-466E-AFF9-25556B57FE6D';
 var identifier = 'Blueberry Pie';
 var minor = 57488;
@@ -42,4 +43,4 @@ cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion)
     .fail(console.error)
     .done();
 
-logToDom('test beacon');
+logToDom('End Beacon 1 Scan.');
