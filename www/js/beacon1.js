@@ -1,16 +1,7 @@
 
-var logToDom = function (message) {
-    var e = document.createElement('label');
-    e.innerText = message;
 
-    var br = document.createElement('br');
-    var br2 = document.createElement('br');
-    document.body.appendChild(e);
-    document.body.appendChild(br);
-    document.body.appendChild(br2);
-};
 logToDom('Init Beacon 1 Scan.');
-var delegate = new cordova.plugins.locationManager.Delegate().implement({
+var delegate = new cordova.plugins.locationManager.delegate.implement({
 
     didDetermineStateForRegion: function (pluginResult) {
 
